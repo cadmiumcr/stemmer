@@ -1,2 +1,2 @@
 require "spec"
-require "../src/stemmer"
+require "../src/cadmium_stemmer"

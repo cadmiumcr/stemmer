@@ -1,6 +1,6 @@
 # stemmer
 
-TODO: Write a description here
+Currently Cadmium only comes with a [Porter](http://tartarus.org/martin/PorterStemmer/index.html) Stemmer, but [Lancaster](http://www.comp.lancs.ac.uk/computing/research/stemming/) will be added soon. Stemmer methods `stem` and `tokenize_and_stem` have also been added to the String class to simplify use.
 
 ## Installation
 
@@ -8,8 +8,8 @@ TODO: Write a description here
 
    ```yaml
    dependencies:
-     stemmer:
-       github: your-github-user/stemmer
+     cadmium_stemmer:
+       github: cadmiumcr/stemmer
    ```
 
 2. Run `shards install`
@@ -17,18 +17,18 @@ TODO: Write a description here
 ## Usage
 
 ```crystal
-require "stemmer"
+require "cadmium_stemmer"
+
+"words".stem
+# => word
+
+"i am waking up to the sounds of chainsaws".tokenize_and_stem
+# => ["wake", "sound", "chainsaw"]
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/stemmer/fork>)
+1. Fork it (<https://github.com/cadmiumcr/stemmer/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +36,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Chris Watson](https://github.com/your-github-user) - creator and maintainer
+- [Chris Watson](https://github.com/watzon) - creator and maintainer
