@@ -1,6 +1,3 @@
-# require "../i18n/stop_words"
-# require "../tokenizer/aggressive_tokenizer"
-
 module Cadmium
   abstract class Stemmer
     include Cadmium::Util::StopWords
