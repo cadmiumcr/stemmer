@@ -12,5 +12,9 @@ dependencies:
   cadmium_tokenizer:
     github: cadmiumcr/tokenizer
 
+development_dependencies:
+  ameba:
+    github: veelenga/ameba
+    version: 0.10.0
 
 license: MIT
