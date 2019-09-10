@@ -31,7 +31,7 @@ module Cadmium
     def self.tokenize_and_stem(text, keep_stops = false)
       stemmed_tokens = [] of String
       lowercase_text = text.downcase
-      tokens = Cadmium::AggressiveTokenizer.new.tokenize(lowercase_text)
+      tokens = Cadmium::Tokenizer::Aggressive.new.tokenize(lowercase_text)
 
       if keep_stops
         tokens.each { |token| stemmed_tokens.push(stem(token)) }
