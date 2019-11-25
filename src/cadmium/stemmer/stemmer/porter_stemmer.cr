@@ -2,6 +2,14 @@ require "./stemmer"
 
 module Cadmium
   class PorterStemmer < Stemmer
+    include Tokenizer::StopWords
+    @@stop_words = Set(String).new
+
+    def initialize
+      add_stopwords_list(:en)
+      @@stop_words.concat @@loaded_stop_words[:en] if @@stop_words.empty?
+    end
+
     def self.stem(token : String)
       return token if token.size < 3
       step5b(step5a(step4(step3(step2(step1c(step1b(step1a(token.downcase)))))))).to_s

@@ -1,28 +1,14 @@
 module Cadmium
   abstract class Stemmer
-    include Cadmium::Util::StopWords
+    include Tokenizer::StopWords
+
+    def initialize
+      add_stopwords_list(:en)
+      @@stop_words.concat @@loaded_stop_words[:en] if @@stop_words.empty?
+    end
 
     def self.stem(token)
       token
-    end
-
-    def self.add_stop_word(word)
-      @@stop_words.push word
-    end
-
-    def self.add_stop_words(words)
-      @@stop_words.concat words
-    end
-
-    def self.remove_stop_word(word)
-      remove_stop_words([word])
-    end
-
-    def self.remove_stop_words(words)
-      words.each do |word|
-        @@stop_words.delete(word)
-      end
-      @@stop_words
     end
 
     def self.tokenize_and_stem(text, keep_stops = false)
